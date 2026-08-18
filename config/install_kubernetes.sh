@@ -56,7 +56,7 @@ curl -sSL "https://raw.githubusercontent.com/kubernetes/release/${RELEASE_VERSIO
 
 systemctl enable --now kubelet
 
-curl -LO https://dl.k8s.io/release/${K8S_VERSION}/bin/linux/amd64/kubectl
+curl -LO https://dl.k8s.io/release/${K8S_VERSION}/bin/linux/${ARCH}/kubectl
 chmod +x kubectl
 
 # Start kubernetes
