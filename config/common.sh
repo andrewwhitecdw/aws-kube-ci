@@ -21,7 +21,7 @@ with_retry() {
 			return 0
 		fi
 
-		if [[ "${max_attempts}" -le 0 ]] || [[ "${count}" -lt "${max_attempts}" ]]; then
+		if [[ "${max_attempts}" -gt 0 && "${count}" -lt "${max_attempts}" ]]; then
 			sleep "${delay}"
 		else
 			break
