@@ -13,8 +13,8 @@
     - ssh-keygen -t rsa -f key
     - terraform init
     - terraform apply -auto-approve -var-file=$TF_VAR_FILE
-    - s=$(terraform output)
-    - echo "export ${s//[[:blank:]]/}" > hostname
+    - s=$(terraform output -raw instance_hostname)
+    - echo "export instance_hostname=$s" > hostname
   artifacts:
     when: always
     paths:
